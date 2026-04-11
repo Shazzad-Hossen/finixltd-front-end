@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme inline {
+	--color-background: var(--background);
+	--color-surface: var(--surface);
+	--color-primary-green: var(--primary-green);
+	--color-accent-blue: var(--accent-blue);
+	--color-text-white: var(--text-white);
+	--color-text-secondary: var(--text-secondary);
+	--color-border: var(--border);
+	--background-image-primary-gradient: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-blue) 100%);
+}
+
+:root,
+[data-theme="light"] {
+	--background: #F6F8FC;
+	--surface: #FFFFFF;
+	--primary-green: #38e3c7;
+	--accent-blue: #11c9f2;
+	--text-white: #0B0F1A;
+	--text-secondary: #5C6472;
+	--border: rgba(11, 15, 26, 0.10);
+}
+
+[data-theme="dark"] {
+	--background: #0B0F1A;
+	--surface: #101826;
+	--primary-green: #38e3c7;
+	--accent-blue: #11c9f2;
+	--text-white: #FFFFFF;
+	--text-secondary: #B8C0CC;
+	--border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+	html {
+		background: var(--background);
+		color-scheme: light;
+	}
+
+	html[data-theme="dark"] {
+		color-scheme: dark;
+	}
+
+	body {
+		min-height: 100vh;
+		background: var(--background);
+		color: var(--text-white);
+	}
+}
