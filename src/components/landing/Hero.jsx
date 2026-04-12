@@ -49,7 +49,7 @@ const Hero = () => {
                         id="hero-heading"
                         className="font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl light:text-text-white"
                     >
-                        <span className="block bg-primary-gradient bg-clip-text text-transparent drop-shadow-[0_0_36px_rgba(56,227,199,0.22)] light:drop-shadow-[0_1px_2px_rgba(11,15,26,0.08)]">
+                        <span className="block bg-primary-gradient bg-clip-text text-transparent drop-shadow-[0_0_36px_rgba(56,227,199,0.22)] light:drop-shadow-[0_5px_2px_rgba(11,15,26,0.08)] light:[-webkit-text-stroke:0.25px_#0B0F1A33] light:[paint-order:stroke_fill]">
                             FINIX LTD
                         </span>
                         <span className="mt-2 block text-2xl font-medium text-slate-300 sm:text-3xl lg:text-[2rem] light:text-text-secondary">

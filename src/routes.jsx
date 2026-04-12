@@ -1,24 +1,35 @@
-import { BrowserRouter, Route, Routes } from "react-router";
-import Landing from "./pages/Landing";
-import MainLayout from "./layouts/MainLayout";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-
+import { BrowserRouter, Route, Routes } from 'react-router';
+import MainLayout from './layouts/MainLayout';
+import Landing from './pages/Landing';
+import About from './pages/About';
+import CompanyDetails from './pages/CompanyDetails';
+import Directors from './pages/Directors';
+import Services from './pages/Services';
+import GlobalExpansion from './pages/GlobalExpansion';
+import FinixAIBot from './pages/FinixAIBot';
+import Compliance from './pages/Compliance';
+import Contact from './pages/Contact';
+import Blogs from './pages/Blogs';
 
 const AppRoutes = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />} >
-            <Route index element={<Landing />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="blog" element={<Blog />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<MainLayout />}>
+                    <Route index element={<Landing />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="company-details" element={<CompanyDetails />} />
+                    <Route path="directors" element={<Directors />} />
+                    <Route path="services" element={<Services />} />
+                    <Route path="global-expansion" element={<GlobalExpansion />} />
+                    <Route path="finix-ai-bot" element={<FinixAIBot />} />
+                    <Route path="compliance" element={<Compliance />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="blogs" element={<Blogs />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default AppRoutes;
