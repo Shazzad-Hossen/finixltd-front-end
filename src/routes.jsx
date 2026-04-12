@@ -10,6 +10,7 @@ import FinixAIBot from './pages/FinixAIBot';
 import Compliance from './pages/Compliance';
 import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
+import Login from './pages/admin/Login';
 
 const AppRoutes = () => {
     return (
@@ -26,7 +27,9 @@ const AppRoutes = () => {
                     <Route path="compliance" element={<Compliance />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="blogs" element={<Blogs />} />
+                    
                 </Route>
+                <Route path="time-admin" element={<Login />} />
             </Routes>
         </BrowserRouter>
     );
