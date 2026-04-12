@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
 import AdminLayout from './layouts/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
-import AdminBlogs from './pages/admin/AdminBlogs';
+import AdminBlogs from './pages/admin/blogs/AdminBlogs';
 
 const AppRoutes = () => {
     return (
