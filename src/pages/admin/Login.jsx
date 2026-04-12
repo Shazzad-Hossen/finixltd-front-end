@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { IoArrowBack, IoEyeOffOutline, IoEyeOutline, IoLockClosedOutline, IoMailOutline } from 'react-icons/io5';
+import { ACCESS_TOKEN_KEY, api } from '../../utils/apicaller';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoading, setUser } from '../../redux/reducers/userSlice';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+   const {loading} = useSelector((state) => state.user);
+    const [error, setError] = useState('');
+    const dispatch = useDispatch();
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        // Wire to your auth API when ready
+        setError('');
+        dispatch(setLoading(true));
+        try {
+            const res = await api.post('/api/login', { email, password });
+            const token = res?.data?.authorization;
+            const user = res?.data?.user;
+            if (token && user) {
+                localStorage.setItem(ACCESS_TOKEN_KEY, token);
+                dispatch(setUser(user));
+            }
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Sign in failed');
+        } finally {
+            dispatch(setLoading(false));
+        }
     };
 
     return (
@@ -111,11 +132,21 @@ const Login = () => {
                             </div>
                         </div>
 
+                        {error ? (
+                            <p
+                                className="mt-6 rounded-lg border border-red-500/40 bg-red-500/10 px-3 py-2 text-center text-sm text-red-200 light:text-red-800"
+                                role="alert"
+                            >
+                                {error}
+                            </p>
+                        ) : null}
+
                         <button
                             type="submit"
-                            className="mt-8 w-full rounded-full bg-primary-gradient py-3 text-sm font-semibold text-[#0B0F1A] shadow-lg shadow-primary-green/20 transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-blue"
+                            disabled={loading}
+                            className="mt-8 w-full rounded-full bg-primary-gradient py-3 text-sm font-semibold text-[#0B0F1A] shadow-lg shadow-primary-green/20 transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-blue disabled:cursor-not-allowed disabled:opacity-60"
                         >
-                            Sign in
+                            {loading ? 'Signing in…' : 'Sign in'}
                         </button>
 
                         <p className="mt-6 text-center text-xs text-text-secondary">

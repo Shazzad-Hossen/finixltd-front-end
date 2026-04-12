@@ -10,7 +10,9 @@ import FinixAIBot from './pages/FinixAIBot';
 import Compliance from './pages/Compliance';
 import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
-import Login from './pages/admin/Login';
+import AdminLayout from './layouts/AdminLayout';
+import Dashboard from './pages/admin/Dashboard';
+import AdminBlogs from './pages/admin/AdminBlogs';
 
 const AppRoutes = () => {
     return (
@@ -29,7 +31,10 @@ const AppRoutes = () => {
                     <Route path="blogs" element={<Blogs />} />
                     
                 </Route>
-                <Route path="time-admin" element={<Login />} />
+                <Route path="time-admin" element={<AdminLayout />}>
+                    <Route index element={<Dashboard />} />
+                    <Route path="blogs" element={<AdminBlogs />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     );
