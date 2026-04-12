@@ -17,7 +17,7 @@ ________________
 
 🎨 DESIGN STYLE (VERY IMPORTANT)
 • Dark premium corporate theme (black / deep navy)
-• Gold + blue highlights (luxury finance feel)
+• Brand gradient highlights: teal / cyan primary green (#38e3c7) through to accent blue (#11c9f2) — use the shared `primary-gradient` from the design tokens (no separate gold palette)
 • Clean, minimal, high-end UI
 • Smooth animations (not heavy)
 • Professional typography (Poppins / Inter)
@@ -252,7 +252,7 @@ ________________
 Design নির্দেশনা:
 • Background: London skyline / financial district
 • Dark overlay
-• Gold + blue glow text
+• Primary headline: `primary-gradient` text (primary green → accent blue) with subtle glow; supporting accents use primary green and accent blue only
 • Smooth animation (fade in)
 ________________
 

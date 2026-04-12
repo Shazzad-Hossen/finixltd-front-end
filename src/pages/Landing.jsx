@@ -1,9 +1,9 @@
 import React from 'react';
-import App from '../App';
+import Hero from '../components/landing/Hero';
 
 const Landing = () => {
     return (
-        <App />
+        <Hero />
     );
 };
 
