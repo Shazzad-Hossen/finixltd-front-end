@@ -25,6 +25,7 @@ const navLinkClass = ({ isActive }) =>
 
 const AdminLayout = () => {
     const {user, loading} = useSelector((state) => state.user);
+    console.log(loading)
     const dispatch = useDispatch();
     const [theme, setTheme] = useState(() => {
         if (typeof window === 'undefined') {
@@ -41,9 +42,11 @@ const AdminLayout = () => {
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const checkAuth = async () => {
+        console.log('checkAuth')
         dispatch(setLoading(true));
-        const res = await api.get('/api/me');
+
         try {
+            const res = await api.get('/api/me');
             if(res.data)
                 dispatch(setUser(res.data));
         } catch (err) {
@@ -51,7 +54,7 @@ const AdminLayout = () => {
         } finally {
             dispatch(setLoading(false));
         }
-        console.log(res)
+   
 
     }
 
