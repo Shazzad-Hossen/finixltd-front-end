@@ -13,6 +13,9 @@ import Blogs from './pages/Blogs';
 import AdminLayout from './layouts/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import AdminBlogs from './pages/admin/blogs/AdminBlogs';
+import CreateBlog from './pages/admin/blogs/CreateBlog';
+import EditBlogs from './pages/admin/blogs/EditBlogs';
+import BlogDetails from './pages/BlogDetails';
 
 const AppRoutes = () => {
     return (
@@ -29,11 +32,14 @@ const AppRoutes = () => {
                     <Route path="compliance" element={<Compliance />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="blogs" element={<Blogs />} />
+                    <Route path="blogs/:id" element={<BlogDetails />} />
                     
                 </Route>
                 <Route path="time-admin" element={<AdminLayout />}>
                     <Route index element={<Dashboard />} />
                     <Route path="blogs" element={<AdminBlogs />} />
+                    <Route path="blogs/create" element={<CreateBlog />} />
+                    <Route path="blogs/:id" element={<EditBlogs />} />
                 </Route>
             </Routes>
         </BrowserRouter>
