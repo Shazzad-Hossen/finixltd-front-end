@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { IoMdSunny } from 'react-icons/io';
 import { IoChevronDown, IoClose, IoMenu, IoMoon } from 'react-icons/io5';
 import { NavLink, useLocation } from 'react-router';
+import logo from '../../assets/logo.svg';
 
 /** Shown inline on desktop (md+). Blog stays visible per requirements. */
 const DESKTOP_PRIMARY_LINKS = [
@@ -98,7 +99,7 @@ const Header = ({ theme, onThemeToggle }) => {
                 <div className="flex items-center justify-between gap-4">
                     <NavLink to="/" className="min-w-0 shrink text-left" end>
                         <p className="text-xl font-semibold tracking-wide text-transparent bg-clip-text bg-primary-gradient sm:text-2xl">
-                            FINIX LTD
+                           <img src={logo} alt="Finix Logo" className='h-[30px]' />
                         </p>
                         <p className="truncate text-xs text-text-secondary">
                             UK corporate finance · Established 2017

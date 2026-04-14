@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router';
 import Loading from '../components/shared/Loading';
 import { PageShell } from '../components/shared/PageShell';
 import { api } from '../utils/apicaller';
+import Seo from '../components/shared/Seo';
 
 const markdownPreviewClass =
     'max-w-none rounded-xl border border-border bg-surface p-5 text-text-white light:bg-white ' +
@@ -63,6 +64,7 @@ const BlogDetails = () => {
     if (loading) {
         return (
             <PageShell>
+                <Seo title="Blog Details" description="Loading FINIX LTD blog post." canonical={`https://finixltd.uk/blogs/${id}`} />
                 <Loading message="Loading blog..." />
             </PageShell>
         );
@@ -70,6 +72,12 @@ const BlogDetails = () => {
 
     return (
         <PageShell>
+            <Seo
+                title={blog?.title || 'Blog Details'}
+                description={blog?.shortDescription || 'Read insights and updates from FINIX LTD.'}
+                canonical={`https://finixltd.uk/blogs/${id}`}
+                image={blog?.thumbnail}
+            />
             <div className="mb-5">
                 <button
                     type="button"

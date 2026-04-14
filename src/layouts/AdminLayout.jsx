@@ -14,6 +14,7 @@ import Login from '../pages/admin/Login';
 import { setLoading, setUser } from '../redux/reducers/userSlice';
 import { ACCESS_TOKEN_KEY, api } from '../utils/apicaller';
 import Loading from '../components/shared/Loading';
+import logo from '../assets/logo.svg';
 
 const navLinkClass = ({ isActive }) =>
     [
@@ -138,10 +139,7 @@ const AdminLayout = () => {
             >
                 <div className="flex items-center justify-between border-b border-border px-4 py-4 lg:py-5">
                     <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
-                            FINIX LTD
-                        </p>
-                        <p className="mt-1 font-heading text-lg font-semibold tracking-tight">Admin</p>
+                        <img src={logo} alt="Finix Logo" className="h-[30px]" />
                     </div>
                     <button
                         type="button"
