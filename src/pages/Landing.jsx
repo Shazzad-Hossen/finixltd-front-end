@@ -3,7 +3,8 @@ import Hero from '../components/landing/Hero';
 import TrustHighlights from '../components/landing/TrustHighlights';
 import AboutSnapshot from '../components/landing/AboutSnapshot';
 import ServicesAndOverview from '../components/landing/ServicesAndOverview';
-import AIExpansionSection from '../components/landing/AIExpansionSection';
+import NatureOfBusiness from '../components/landing/NatureOfBusiness';
+
 import CTA from '../components/landing/CTA';
 
 const Landing = () => {
@@ -13,7 +14,7 @@ const Landing = () => {
         <TrustHighlights />
         <AboutSnapshot />
         <ServicesAndOverview />
-        <AIExpansionSection />
+        <NatureOfBusiness />
         <CTA />
         </>
     );

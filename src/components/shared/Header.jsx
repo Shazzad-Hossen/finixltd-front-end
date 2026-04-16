@@ -22,6 +22,10 @@ const DESKTOP_MORE_LINKS = [
     { to: '/global-expansion', label: 'Global' },
     { to: '/finix-ai-bot', label: 'FinixAI Bot' },
     { to: '/compliance', label: 'Legal' },
+    { to: '/sic-69201-accounting-auditing', label: 'SIC 69201' },
+    { to: '/sic-69202-bookkeeping', label: 'SIC 69202' },
+    { to: '/sic-70221-financial-management', label: 'SIC 70221' },
+    { to: '/sic-70229-management-consultancy', label: 'SIC 70229' },
 ];
 
 /** Full list for the burger menu (unchanged pattern: every route listed). */
@@ -36,6 +40,10 @@ const MOBILE_NAV_LINKS = [
     { to: '/finix-ai-bot', label: 'AI Bot' },
     { to: '/compliance', label: 'Legal' },
     { to: '/contact', label: 'Contact' },
+    { to: '/sic-69201-accounting-auditing', label: 'SIC 69201' },
+    { to: '/sic-69202-bookkeeping', label: 'SIC 69202' },
+    { to: '/sic-70221-financial-management', label: 'SIC 70221' },
+    { to: '/sic-70229-management-consultancy', label: 'SIC 70229' },
 ];
 
 const Header = ({ theme, onThemeToggle }) => {

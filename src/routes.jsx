@@ -10,6 +10,10 @@ import FinixAIBot from './pages/FinixAIBot';
 import Compliance from './pages/Compliance';
 import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
+import SicAccountingAuditing from './pages/SicAccountingAuditing';
+import SicBookkeeping from './pages/SicBookkeeping';
+import SicFinancialManagement from './pages/SicFinancialManagement';
+import SicManagementConsultancy from './pages/SicManagementConsultancy';
 import AdminLayout from './layouts/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import AdminBlogs from './pages/admin/blogs/AdminBlogs';
@@ -85,6 +89,23 @@ const RouteSeo = () => {
             title: 'Blogs',
             description: 'Read FINIX LTD insights, updates, and thought leadership on finance and business.',
         },
+        '/sic-69201-accounting-auditing': {
+            title: 'SIC 69201',
+            description: 'Learn more about FINIX LTD accounting and auditing activities (SIC 69201).',
+        },
+        '/sic-69202-bookkeeping': {
+            title: 'SIC 69202',
+            description: 'Learn more about FINIX LTD bookkeeping activities (SIC 69202).',
+        },
+        '/sic-70221-financial-management': {
+            title: 'SIC 70221',
+            description: 'Learn more about FINIX LTD financial management activities (SIC 70221).',
+        },
+        '/sic-70229-management-consultancy': {
+            title: 'SIC 70229',
+            description:
+                'Learn more about FINIX LTD management consultancy activities other than financial management (SIC 70229).',
+        },
     };
 
     const matched = routeMap[pathname] || {
@@ -112,7 +133,10 @@ const AppRoutes = () => {
                     <Route path="contact" element={<Contact />} />
                     <Route path="blogs" element={<Blogs />} />
                     <Route path="blogs/:id" element={<BlogDetails />} />
-                    
+                    <Route path="sic-69201-accounting-auditing" element={<SicAccountingAuditing />} />
+                    <Route path="sic-69202-bookkeeping" element={<SicBookkeeping />} />
+                    <Route path="sic-70221-financial-management" element={<SicFinancialManagement />} />
+                    <Route path="sic-70229-management-consultancy" element={<SicManagementConsultancy />} />
                 </Route>
                 <Route path="time-admin" element={<AdminLayout />}>
                     <Route index element={<Dashboard />} />
